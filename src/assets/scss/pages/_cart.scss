@@ -1,0 +1,14 @@
+.actions {
+	display: flex;
+	justify-content: space-between;
+	button {
+		margin: 0 2px;
+	}
+	.remove {
+		background: #c96305;
+	}
+}
+
+.total-money {
+	text-align: center;
+}

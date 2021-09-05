@@ -1,0 +1,10 @@
+.section-product-detail {
+  @include pxRem(padding, 80 0);
+}
+.section-account {
+  .btn {
+    @include pxRem(margin-top, 20);
+    @include pxRem(max-width, 200);
+  }
+}
+

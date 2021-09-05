@@ -1,0 +1,75 @@
+.header-page {
+  height: 90px;
+  background-color: map-get($colors, header);
+  .countable-list {
+    display: flex;
+    a {
+      @include pxRem(font-size, 26);
+      @include pxRem(padding, 0 5);
+      color: map-get($colors, white);
+      &:hover {
+        color: map-get($colors, primary);
+      }
+    }
+  }
+}
+
+.header-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-header {
+  height: 90px;
+}
+
+.navbar {
+  .nav-list {
+    display: flex;
+  }
+  .nav-item {
+    @include pxRem(line-height, 90);
+    @include pxRem(padding, 0 15);
+    a {
+      @include pxRem(font-size, 24);
+      position: relative;
+      color: map-get($colors, white);
+      transition: all ease-in-out .4s;
+      &.active {
+        // color: map-get($colors, primary);
+        &::after {
+          position: absolute;
+          bottom: -5px;
+          height: 2px;
+          width: 100%;
+          content: '';
+          display: block;
+          transition: all ease-in-out .4s;
+          background-color: map-get($colors, primary);
+        }
+      }
+      &:hover {
+        color: map-get($colors, primary);
+      }
+    }
+  }
+}
+
+.wrap-fav-couter {
+  position: relative;
+  span {
+    @include pxRem(top, -10);
+    @include pxRem(left, -10);
+    @include pxRem(height, 20);
+    @include pxRem(padding,0 6);
+    @include pxRem(font-size, 15);
+    display: flex;
+    border-radius: 50%;
+    position: absolute;
+    align-items: center;
+    background-color: red;
+    justify-content: center;
+    color: map-get($colors, white);
+  }
+}
