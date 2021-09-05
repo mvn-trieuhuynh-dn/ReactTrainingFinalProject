@@ -1,0 +1,119 @@
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="number"],
+select,
+textarea {
+  padding: 8px;
+  border-radius: 6px;
+  font-weight: 400;
+  font-size: 18px;
+  width: 100%;
+  border: 1px solid map-get($colors, border);
+  color: map-get($colors, txt-primary);
+  background: map-get($colors, white);
+  outline: none;
+  transition: border-color 0.4s;
+  -webkit-appearance: none;
+  transition: border-color 0.4s, box-shadow 0.4s;
+  box-sizing: border-box;
+  &:hover {
+    border-color: map-get($colors, primary);
+  }
+}
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+  + label {
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid map-get($colors, border);
+      border-radius: 100%;
+      background: map-get($colors, white);
+    }
+    &:after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: map-get($colors, primary);
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 100%;
+      -webkit-transition: all 0.2s ease;
+      transition: all 0.2s ease;
+    }
+  }
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+.form-select {
+  position: relative;
+  cursor: pointer;
+}
+.form-select:after {
+  content: " ";
+  display: block;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 0;
+  width: 0;
+  position: absolute;
+  border-top: 7px solid map-get($colors, primary);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  pointer-events: none;
+}
+.form-group {
+  width: 100%;
+  margin-bottom: 16px;
+}
+.form-label {
+  display: inline-block;
+  width: 100%;
+  color: map-get($colors, txt-primary);
+  padding-bottom: 10px;
+}
+.form-radio {
+  display: inline-block;
+  margin-right: 20px;
+}
+.resgister-form {
+  min-width: 600px
+}
+
+/* form-login */
+.form-login {
+  @include pxRem(max-width, 400);
+  @include pxRem(padding, 80 0);
+  margin: 0 auto;
+  h1 {
+    @include pxRem(margin-bottom, 20);
+  }
+  .form-control {
+    @include pxRem(margin-bottom, 10);
+  }
+  .form-action {
+    @include pxRem(margin-top, 20);
+  }
+}

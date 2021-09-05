@@ -1,0 +1,82 @@
+.product-list {
+  @include pxRem(margin-top, 30);
+  .product-item {
+    @include pxRem(margin-bottom, 30);
+  }
+  .product-card {
+    @include pxRem(margin-top, 7);
+    h4 {
+      @include pxRem(margin-bottom, 5);
+    }
+    p {
+      @include pxRem(font-size, 16);
+    }
+  }
+}
+
+.pagination {
+  @include pxRem(margin-top, 30);
+  display: flex;
+  justify-content: center;
+  .page-item {
+    @include pxRem(width, 35);
+    @include pxRem(height, 35);
+    @include pxRem(line-height, 35);
+    // background-color: map-get($colors, header);
+    text-align: center;
+    @include pxRem(margin, 0 5);
+    span {
+      @include pxRem(font-size, 18);
+      color: map-get($colors, #000);
+      &.active {
+        color: map-get($colors, primary);
+      }
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.section-product-detail {
+  .product-card {
+    @include pxRem(margin-top, 10);
+    .product-image {
+      img {
+        width: -webkit-fill-available;
+      }
+    }
+  }
+  .product-desc {
+    @include pxRem(margin-top, 5);
+    @include pxRem(font-size, 16);
+  }
+  .product-price {
+    @include pxRem(margin, 5 0);
+    @include pxRem(font-size, 20);
+  }
+}
+
+.product-btn {
+  @include pxRem(margin-top, 5);
+}
+
+.product-image {
+  position: relative;
+  display: block;
+  .product-fav {
+    @include pxRem(top, 10);
+    @include pxRem(right, 10);
+    @include pxRem(font-size, 22);
+    position: absolute;
+    z-index: 2;
+    color: map-get($colors, white);
+    &.active {
+      color: red;
+    }
+  }
+}
+
+.product-name {
+  text-transform: capitalize;
+}

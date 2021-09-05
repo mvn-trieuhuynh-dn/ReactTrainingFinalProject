@@ -1,0 +1,7 @@
+.section-title {
+  @include pxRem(font-size, 40);
+}
+
+.section-about-us {
+  @include pxRem(padding, 80 0);
+}
