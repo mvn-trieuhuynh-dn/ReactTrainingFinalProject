@@ -1,11 +1,10 @@
 import React from 'react';
 import logoHeader from './../../assets/img/logo.png';
 import { FaCartPlus, FaUser, FaHeart} from "react-icons/fa";
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
-  // const count = useSelector(state => state.counter.value)
   const favs = useSelector(state => state.fav.value);
   console.log(favs);
   const cartList = useSelector((state) => state.cart.value);

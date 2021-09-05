@@ -50,7 +50,7 @@ const Products = () => {
               <li className="product-item col-4" key={product.id}>
                 <div className="product-wrap">
                   <Link to={`/product/${product.id}`} className="product-image">
-                    <img src={productImg} />
+                    <img alt="product" src={productImg} />
                     <span className={`product-fav ${favList.indexOf(product.id) >=0 ? 'active' : ''}`} onClick={(event) => handleFav(event, product.id)}><FaHeart /></span>
                   </Link>
                   <div className="product-card">

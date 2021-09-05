@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import productImg from '../../../assets/img/product-packet.png';
-import { FaAngleRight, FaHeart } from "react-icons/fa";
-import { FaAngleLeft } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { add, dec, remove } from '../../../store/cartSlice';
@@ -12,7 +11,7 @@ const Cart = () => {
   const favList = useSelector((state) => state.fav.value);
   const cartList = useSelector((state) => state.cart.value);
   cartList.map(product => {
-    totalMoney += parseInt(product.price)*parseInt(product.total)
+    return totalMoney += parseInt(product.price)*parseInt(product.total)
   });
   return (
     <section className="section-product">
@@ -27,7 +26,7 @@ const Cart = () => {
                     <span className="wrap-fav-couter">
                       {!!product.total && <span>x{product.total}</span>}
                     </span>
-                    <img src={productImg} />
+                    <img alt="product" src={productImg} />
                     <span className={`product-fav ${favList.indexOf(product.id) >=0 ? 'active' : ''}`}><FaHeart /></span>
                   </Link>
                   <div className="product-card">

@@ -5,8 +5,8 @@ import { useEffect, useState } from 'react';
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const pages = [1, 2];
-  const [page, setPage] = useState(1);
+
+  const [page] = useState(1);
 
   useEffect(() => {
     fetch(`https://reqres.in/api/products?page=${page}`).then(e => e.json())
@@ -17,12 +17,6 @@ const Home = () => {
       )
   }, [page]);
 
-  function handleChangePage(number) {
-    if (number >= pages[0] && number <= pages[pages.length - 1]) {
-      setPage(number);
-    }
-  }
-  
   return (
     <div>
       <HeroBnaner />
@@ -35,7 +29,7 @@ const Home = () => {
                 <li className="product-item col-4" key={e.id}>
                   <div className="product-wrap">
                     <Link to="/products" className="product-image">
-                      <img src={product} />
+                      <img alt="product" src={product} />
                     </Link>
                     <div className="product-card">
                       <h4 className="product-name">{e.name}</h4>
